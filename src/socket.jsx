@@ -12,7 +12,7 @@ export const connectWebSocket = (myid,logintoken) => {
   socket = new WebSocket(`wss://backend-gar4.onrender.com?myid=${myid}&logintoken=${logintoken}`);
 
   socket.onopen = () => {
-    console.log('WebSocket connection established for:', userId);
+    console.log('WebSocket connection established for:', myid);
   };
    
  socket.onmessage = (event) => {
