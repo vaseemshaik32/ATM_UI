@@ -5,7 +5,7 @@ import { connectWebSocket } from './socket';
 /*login api. unfinished*/
 export const loginUser = async (loginData,navigator) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/login', loginData);
+    const response = await axios.post('https://backend-gar4.onrender.com/api/login', loginData);
     localStorage.setItem('logintoken', response.data.token);
     localStorage.setItem('usernameforreact',response.data.usernameforreact)
     connectWebSocket(response.data.usernameforreact); 
@@ -24,7 +24,7 @@ export const loginUser = async (loginData,navigator) => {
 
 export const registerUser = async (registerData,navigator) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/register', registerData);
+    const response = await axios.post('https://backend-gar4.onrender.com/api/register', registerData);
     navigator('/')
     console.log('Registration Successful:', response.data); // Handle success message
     return response.data;
@@ -41,7 +41,7 @@ export const getcashguys = async (navigator, dispatch, amount) => {
   try {
     const token = localStorage.getItem('logintoken');
     const response = await axios.put(
-      'http://localhost:3000/api/getstats/needcash',
+      'https://backend-gar4.onrender.com/api/getstats/needcash',
       { amount }, // Include the amount in the request body
       {
         headers: {
@@ -65,7 +65,7 @@ export const getdigitalguys = async (navigator, dispatch, amount) => {
   try {
     const token = localStorage.getItem('logintoken');
     const response = await axios.put(
-      'http://localhost:3000/api/getstats/needdigital',
+      'https://backend-gar4.onrender.com/api/getstats/needdigital',
       { amount }, // Include the amount in the request body
       {
         headers: {
@@ -87,7 +87,7 @@ export const userlogout = async (navigator) => {
   const token = localStorage.getItem('logintoken'); // Assuming you store the token in localStorage
   try {
     axios.put(
-      'http://localhost:3000/api/logout', // API endpoint
+      'https://backend-gar4.onrender.com/api/logout', // API endpoint
       {}, // Empty body for a PUT request
       {
         headers: {

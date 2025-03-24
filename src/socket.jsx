@@ -8,7 +8,7 @@ import { addMessage } from "./messageslice";
 /* when user logs in, we connect the web socket*/
 let socket = null;
 export const connectWebSocket = (userId) => {
-  socket = new WebSocket(`ws://localhost:3000?myid=${userId}`);
+  socket = new WebSocket(`wss://backend-gar4.onrender.com?myid=${userId}`);
 
   socket.onopen = () => {
     console.log('WebSocket connection established for:', userId);
