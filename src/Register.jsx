@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { registerUser } from "./api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation to Terms and Conditions page
+
 export default function Register() {
   const {
     register,
@@ -10,9 +11,9 @@ export default function Register() {
   } = useForm();
 
   // Submit handler
-  const navigator=useNavigate()
+  const navigator = useNavigate();
   const onSubmit = (data) => {
-    registerUser(data,navigator)
+    registerUser(data, navigator);
   };
 
   return (
@@ -87,6 +88,14 @@ export default function Register() {
               </p>
             )}
           </div>
+
+          {/* Terms and Conditions */}
+          <p className="text-sm text-gray-400 text-center">
+            By registering, you agree to our{" "}
+            <Link to="/terms" className="text-blue-400 hover:underline">
+              Terms and Conditions
+            </Link>.
+          </p>
 
           {/* Submit Button */}
           <button

@@ -13,10 +13,12 @@ import { Provider } from 'react-redux'; // Import Redux Provider
 import store from './store';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Content } from './content.jsx';
+import TandC from './t & c.jsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
   { path: '/register', element: <Register /> },
+  {path: '/terms',element:<TandC/>},
   {
     path: '/userdashboard',
     element: <UserDashboard />, // Parent route with Navbar
