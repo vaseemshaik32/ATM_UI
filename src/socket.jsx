@@ -7,8 +7,8 @@ import { addChat } from "./chatsslice";
 import { addMessage } from "./messageslice";
 /* when user logs in, we connect the web socket*/
 let socket = null;
-const logintoken= localStorage.getItem('logintoken')
-export const connectWebSocket = (userId) => {
+export const connectWebSocket = (userId,logintoken) => {
+  console.log(logintoken)
   socket = new WebSocket(`wss://backend-gar4.onrender.com?myid=${userId}&logintoken=${logintoken}`);
 
   socket.onopen = () => {

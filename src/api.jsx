@@ -8,7 +8,7 @@ export const loginUser = async (loginData,navigator) => {
     const response = await axios.post('https://backend-gar4.onrender.com/api/login', loginData);
     localStorage.setItem('logintoken', response.data.token);
     localStorage.setItem('usernameforreact',response.data.usernameforreact)
-    connectWebSocket(response.data.usernameforreact); 
+    connectWebSocket(response.data.usernameforreact,response.data.token); 
     navigator('/userdashboard/content')
     console.log('Login Successful:', response.data); // Handle the token or success message
     return response.data;
