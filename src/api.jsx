@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useDispatch,useSelector } from 'react-redux';
 import { setDonors, setReceivers } from './userinfoslice';
 import { connectWebSocket } from './socket';
 /*login api. unfinished*/

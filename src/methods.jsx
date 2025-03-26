@@ -9,15 +9,16 @@ export function getuserlocation() {
         (error) => {
           if (error.code === error.PERMISSION_DENIED) {
             alert("Location access is required to log in. Please allow location access.");
+            reject("Location access denied"); // Reject the promise
           } else {
             alert("Error retrieving location. Please try again.");
+            reject("Error retrieving location"); // Reject the promise
           }
-          resolve({ latitude: -1, longitude: -1 }); // Resolve with fallback values
         }
       );
     } else {
       alert("Geolocation is not supported by your browser.");
-      resolve({ latitude: -1, longitude: -1 }); // Resolve with fallback values
+      reject("Geolocation not supported"); // Reject the promise
     }
   });
 }
