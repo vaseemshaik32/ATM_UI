@@ -4,7 +4,7 @@ import { connectWebSocket } from './socket';
 /*login api. unfinished*/
 export const loginUser = async (loginData, navigator) => {
   try {
-    const response = await axios.post('https://backend-qyp7.ocom/api/login', loginData);
+    const response = await axios.post('https://backend-qyp7.onrender.com/api/login', loginData);
 
     // Expect a JSON object for successful login
     if (response.data && response.data.token) {
