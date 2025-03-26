@@ -34,8 +34,14 @@ export default function HomePage() {
                 Welcome to <span className="text-blue-500">Chicken Fish</span>
               </h1>
               <p className="text-lg text-gray-400 mb-8">
-                Hey, I tried to solve a real world problem with this app. We all have been in the long ATM lines. Be it for deposition or withdrawl of cash. The core idea of this app is around
-                the question, 'what if I match the guys that want to deposite cash with the guys that want to withdraw cash?' Have Fun
+                Hey. We all have been in the long ATM lines. Be it for deposition or withdrawl of cash.
+                What if I match the people that want to deposit cash with the people that want to withdraw cash?'.
+                1.Register and login. Enter the amount that you want to exchange. 
+                2.Choose if you want to exchange cash or digital currency. the app will give you some matches.they are looking to exchange with you. cash to digital or digital to cash. 
+                3.Choose the closest person from the matches. just click their name to send them a chat request. 
+                4.Similarly, other users can send you a chat requests and you can accept them. 
+                5.You can check the users that accepted your request in the chats section. just click their name and start chatting.
+                6. Go back to the matches and choose another user if you want to chat with a new user.
               </p>
               <a
                 href="#learn-more"
