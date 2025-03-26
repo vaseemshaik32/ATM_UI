@@ -2,41 +2,33 @@ import axios from 'axios';
 import { setDonors, setReceivers } from './userinfoslice';
 import { connectWebSocket } from './socket';
 /*login api. unfinished*/
-export const loginUser = async (loginData, navigator) => {
-  try {
+export const loginUser = async (loginData,navigator) => {
+  try 
+  {
     const response = await axios.post('https://backend-qyp7.onrender.com/api/login', loginData);
-
-    // Expect a JSON object for successful login
-    if (response.data && response.data.token) {
-      localStorage.setItem('logintoken', response.data.token);
-      localStorage.setItem('usernameforreact', response.data.usernameforreact);
-      connectWebSocket(response.data.usernameforreact, response.data.token);
-      navigator('/userdashboard/content');
-      console.log('Login Successful:', response.data);
-      return response.data;
-    }
-  } catch (error) {
-    // Check for error response from the backend
-    if (error.response) {
-      const errorMessage = error.response.data; // Message from the backend
-
-      if (errorMessage === 'Please register first') {
-        alert('Please register first');
-      } else if (errorMessage === 'Incorrect password') {
-        alert('Incorrect password. Try again.');
-      } else {
-        alert('Login Failed: ' + errorMessage);
-      }
-    } else {
-      // Handle network errors or unexpected issues
-      console.error('Login Failed:', error.message);
-      alert('An unexpected error occurred. Please try again later.');
-    }
-
-    throw error; // Re-throw if further handling is needed
+    if (response.data === 'Please register first') {
+    alert('Please register first'); return}
+    localStorage.setItem('logintoken', response.data.token);
+    localStorage.setItem('usernameforreact',response.data.usernameforreact)
+    connectWebSocket(response.data.usernameforreact,response.data.token); 
+    navigator('/userdashboard/content')
+    console.log('Login Successful:', response.data); // Handle the token or success message
+    return response.data;
+    } 
+  catch (error) 
+  {
+  if (error.response && error.response.data === 'Please register first') {
+    alert('Please register first');
+  } else if (error.response && error.response.data === 'Incorrect password') {
+    alert('Incorrect password. Try again.');
+  } else {
+    console.error('Login Failed:', error.response ? error.response.data : error.message);
+    alert('An unexpected error occurred. Please try again later.');
   }
-};
+  throw error; // Re-throw for further handling if needed
+  }
 
+};
 
 
 
