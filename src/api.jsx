@@ -19,7 +19,7 @@ export const loginUser = async (loginData,navigator) => {
   {
   if (error.response && error.response.data === 'Please register first') {
     alert('Please register first');
-  } else if (error.response && error.response.data === 'Incorrect password') {
+  } else if (error.response && error.response.data === 'incorrect password') {
     alert('Incorrect password. Try again.');
   } else {
     console.error('Login Failed:', error.response ? error.response.data : error.message);
