@@ -46,7 +46,8 @@ export default function Navbar() {
     if (!matchescash) {
       alert('Choose one of the options');
     } else {
-      navigator(`/userdashboard/matches/${matchescash}`);
+      if (matchescash==='true'){navigator(`/userdashboard/matches/true`);}
+      else{navigator(`/userdashboard/matches/false`);}
     }
   };
 
