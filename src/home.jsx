@@ -53,6 +53,9 @@ export default function HomePage() {
             </h2>
 
             {/* Login Form */}
+            <p className="text-sm text-red-400 mb-4">
+              Please enable location on your device for accurate results.
+            </p>
             <form onSubmit={handleSubmit(onLoginSubmit)} className="space-y-4">
               {/* Email Field */}
               <div>
