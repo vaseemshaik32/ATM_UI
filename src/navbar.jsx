@@ -1,8 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { userlogout } from "./api.jsx";
-
 export default function Navbar() {
   const navigator = useNavigate();
 
@@ -45,6 +40,16 @@ export default function Navbar() {
     navigator('/userdashboard/requests');
   };
 
+  // Matches click handler
+  const handlematchesclick = () => {
+    const matchescash = localStorage.getItem('matchescash');
+    if (!matchescash) {
+      alert('Choose one of the options');
+    } else {
+      navigator(`/userdashboard/matches/${matchescash}`);
+    }
+  };
+
   return (
     <nav className="bg-gray-800 text-gray-300 shadow-md fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4">
       <div className="flex space-x-6">
@@ -68,6 +73,14 @@ export default function Navbar() {
         >
           {hasNewRequests && <span className="absolute -top-1 -right-3 w-2 h-2 bg-red-500 rounded-full"></span>}
           Requests
+        </div>
+
+        {/* Matches Button */}
+        <div
+          onClick={handlematchesclick}
+          className="cursor-pointer text-lg font-bold text-green-400 hover:text-green-500 transition duration-200"
+        >
+          Matches
         </div>
       </div>
       <button

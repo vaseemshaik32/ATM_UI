@@ -63,6 +63,7 @@ export const getcashguys = async (navigator, dispatch, amount) => {
     );
     console.log('Active Users:', response); // Logs the list of users
     dispatch(setReceivers(response.data));
+    localStorage.setItem('matchescash')=true
     navigator('/userdashboard/matches/true');
     return response.data;
   } catch (error) {
@@ -87,6 +88,7 @@ export const getdigitalguys = async (navigator, dispatch, amount) => {
     );
     console.log('Active Users:', response); 
     dispatch(setDonors(response.data));
+    localStorage.setItem('matchescash')=false
     navigator('/userdashboard/matches/false');
     return response.data;
   } catch (response) {
