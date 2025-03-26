@@ -5,6 +5,10 @@ import { connectWebSocket } from './socket';
 export const loginUser = async (loginData,navigator) => {
   try {
     const response = await axios.post('https://backend-qyp7.onrender.com/api/login', loginData);
+    
+    if (response.data === 'Please register first') {
+    alert('Please register first'); return}
+
     localStorage.setItem('logintoken', response.data.token);
     localStorage.setItem('usernameforreact',response.data.usernameforreact)
     connectWebSocket(response.data.usernameforreact,response.data.token); 
