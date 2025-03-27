@@ -28,11 +28,6 @@ window.onload = () => {
     }
 };
 
-window.onbeforeunload = () => {
-    // Clear localStorage
-    localStorage.clear();
-    console.log('LocalStorage cleared on window close or reload.');
-};
 
 
 const router = createBrowserRouter([
