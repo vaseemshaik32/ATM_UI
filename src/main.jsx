@@ -13,24 +13,32 @@ import { Provider } from 'react-redux'; // Import Redux Provider
 import store from './store';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Content } from './content.jsx';
-import TandC from './t & c.jsx'
+import TandC from './t & c.jsx';
+import { connectWebSocket } from './socket'; // Import WebSocket utility
+
+// WebSocket initialization on app load
+const myid = localStorage.getItem('usernameforreact');
+const logintoken = localStorage.getItem('logintoken');
+if (myid && logintoken) {
+  connectWebSocket(myid, logintoken); // Establish WebSocket connection
+}
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
   { path: '/register', element: <Register /> },
-  {path: '/terms',element:<TandC/>},
+  { path: '/terms', element: <TandC /> },
   {
     path: '/userdashboard',
     element: <UserDashboard />, // Parent route with Navbar
     children: [
-      { path: '/userdashboard/content', element: <Content/> },
+      { path: '/userdashboard/content', element: <Content /> },
       { path: '/userdashboard/chats', element: <Chats /> },
       { path: '/userdashboard/matches/:cash', element: <Matches /> },
       { path: '/userdashboard/chatwindow/:nameofmatch', element: <ChatWindow /> },
-      { path: '/userdashboard/requests', element: <Requests /> }
-    ]
+      { path: '/userdashboard/requests', element: <Requests /> },
+    ],
   },
-  { path: '*', element: <NotFound /> }
+  { path: '*', element: <NotFound /> },
 ]);
 
 createRoot(document.getElementById('root')).render(
