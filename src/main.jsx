@@ -16,12 +16,6 @@ import { Content } from './content.jsx';
 import TandC from './t & c.jsx';
 import { connectWebSocket } from './socket'; // Import WebSocket utility
 
-// WebSocket initialization on app load
-const myid = localStorage.getItem('usernameforreact');
-const logintoken = localStorage.getItem('logintoken');
-if (myid && logintoken) {
-  connectWebSocket(myid, logintoken); // Establish WebSocket connection
-}
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
