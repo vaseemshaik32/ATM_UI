@@ -16,6 +16,17 @@ import { Content } from './content.jsx';
 import TandC from './t & c.jsx';
 import { connectWebSocket } from './socket'; // Import WebSocket utility
 
+window.onload = () => {
+    const username = localStorage.getItem('usernameforreact');
+    const token = localStorage.getItem('logintoken');
+
+    if (username && token) {
+        console.log('Attempting WebSocket reconnection...');
+        connectWebSocket(username, token); // Call the function with stored values
+    } else {
+        console.log('User credentials not found in localStorage. Cannot reconnect WebSocket.');
+    }
+};
 
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
