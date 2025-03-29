@@ -3,9 +3,9 @@ import React from 'react';
 function Readme() {
   return (
     <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-bold text-center mb-6">Welcome to CashExchange!</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">Welcome to ChickenFish!</h1>
       <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-        Tired of those long ATM lines? Whether you're depositing or withdrawing cash, 
+        Tired of those long ATM lines? Whether you're depositing or withdrawing cash.
         what if we could match people wanting to deposit cash with those who want to withdraw it?
       </p>
       <ol className="list-decimal list-inside text-gray-200 space-y-4">

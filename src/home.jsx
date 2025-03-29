@@ -33,12 +33,12 @@ export default function HomePage() {
               <h1 className="text-5xl lg:text-6xl font-extrabold text-white mb-4">
                 Welcome to <span className="text-blue-500">Chicken Fish</span>
               </h1>
-              <a
+              <button
                 onClick={()=>navigator('/readme')}
                 className="inline-block px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
               >
-                Learn More
-              </a>
+                User Guide
+              </button>
             </div>
           </div>
 
