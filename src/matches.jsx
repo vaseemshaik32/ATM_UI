@@ -12,10 +12,12 @@ const Matches = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 p-6 text-white">
-      <h1 className="text-4xl font-bold mb-6 text-center">Matches</h1>
+    <div className="min-h-screen bg-black p-6 text-neon-green">
+      <h1 className="text-4xl font-extrabold mb-6 text-center text-neon-pink">
+        Matches
+      </h1>
       {isCashMode && (
-        <p className="mb-4 text-lg font-semibold text-center animate-pulse">
+        <p className="mb-4 text-lg font-semibold text-center text-neon-green animate-pulse">
           💵 Cash mode is enabled!
         </p>
       )}
@@ -24,9 +26,9 @@ const Matches = () => {
           <li
             key={index}
             onClick={() => sendConnectRequest(user.userid.username)} // Send connection request with username
-            className="flex justify-between items-center p-4 bg-white text-gray-800 rounded-lg shadow-lg transform transition hover:-translate-y-2 hover:bg-blue-600 hover:text-white duration-300"
+            className="flex justify-between items-center p-4 bg-black border-2 border-neon-pink text-neon-green rounded-lg shadow-glow transform transition hover:translate-y-1 hover:bg-neon-pink hover:text-black duration-300"
           >
-            <span className="font-medium">{distance} km</span>
+            <span className="font-bold">{distance} km</span>
             <span className="font-bold">{user.userid.username}</span>
           </li>
         ))}
@@ -36,4 +38,3 @@ const Matches = () => {
 };
 
 export default Matches;
-

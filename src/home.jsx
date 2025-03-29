@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { getuserlocation } from "./methods";
 import { loginUser } from "./api";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const {
@@ -11,31 +11,36 @@ export default function HomePage() {
     formState: { errors },
   } = useForm();
 
-  // Submit handler
-  const navigator= useNavigate()
+  const navigator = useNavigate();
   const onLoginSubmit = (data) => {
-    getuserlocation().then(
-      (Response)=>{
+    getuserlocation()
+      .then((Response) => {
         const loginPayload = { ...data, ...Response };
-        loginUser(loginPayload,navigator)
-      }
-    ).catch(()=>{console.log('the location api fucked up')})
-    
+        loginUser(loginPayload, navigator);
+      })
+      .catch(() => {
+        console.log("The location API failed");
+      });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center text-gray-300">
+    <div className="min-h-screen bg-black text-neon-green flex items-center justify-center font-mono">
       <div className="container mx-auto px-6 py-10">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Left Section: App Description */}
-          <div className="w-full lg:w-1/2">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-600">
-              <h1 className="text-5xl lg:text-6xl font-extrabold text-white mb-4">
-                Welcome to <span className="text-blue-500">Chicken Fish</span>
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <div className="bg-black border-2 border-neon-pink rounded-3xl shadow-glow p-8 lg:p-10">
+              <h1 className="text-5xl lg:text-6xl font-extrabold text-neon-green mb-6">
+                Welcome to{" "}
+                <span className="text-neon-pink">Chicken Fish</span>
               </h1>
+              <p className="text-lg text-neon-green opacity-80 leading-relaxed mb-6">
+                A revolutionary way to exchange cash and digital currency with
+                ease.
+              </p>
               <button
-                onClick={()=>navigator('/readme')}
-                className="inline-block px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+                onClick={() => navigator("/readme")}
+                className="inline-block px-6 py-3 bg-neon-pink text-black font-bold text-lg rounded-lg shadow-glow hover:bg-neon-green hover:text-black transition-transform transform hover:scale-105"
               >
                 User Guide
               </button>
@@ -43,13 +48,13 @@ export default function HomePage() {
           </div>
 
           {/* Right Section: Login and Register */}
-          <div className="w-full lg:w-1/3 bg-gray-800 shadow-2xl rounded-3xl p-6 border border-gray-600">
-            <h2 className="text-3xl font-semibold text-white mb-6">
+          <div className="w-full lg:w-1/3 bg-gradient-to-br from-black to-gray-900 shadow-glow rounded-3xl p-6 border border-neon-pink">
+            <h2 className="text-4xl font-extrabold text-neon-green mb-6">
               Get Started
             </h2>
 
             {/* Login Form */}
-            <p className="text-sm text-red-400 mb-4">
+            <p className="text-sm text-neon-pink mb-4">
               Please enable location on your device for accurate results.
             </p>
             <form onSubmit={handleSubmit(onLoginSubmit)} className="space-y-4">
@@ -59,7 +64,7 @@ export default function HomePage() {
                   type="email"
                   {...register("email", { required: "Email is required" })}
                   placeholder="Email"
-                  className="w-full px-4 py-3 bg-gray-700 text-gray-200 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                  className="w-full px-4 py-3 bg-gray-800 text-neon-green border border-neon-pink rounded-lg focus:ring-2 focus:ring-neon-green focus:outline-none"
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-500">
@@ -74,7 +79,7 @@ export default function HomePage() {
                   type="password"
                   {...register("password", { required: "Password is required" })}
                   placeholder="Password"
-                  className="w-full px-4 py-3 bg-gray-700 text-gray-200 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                  className="w-full px-4 py-3 bg-gray-800 text-neon-green border border-neon-pink rounded-lg focus:ring-2 focus:ring-neon-green focus:outline-none"
                 />
                 {errors.password && (
                   <p className="mt-1 text-sm text-red-500">
@@ -86,7 +91,7 @@ export default function HomePage() {
               {/* Login Button */}
               <button
                 type="submit"
-                className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-transform transform hover:scale-105"
+                className="w-full px-4 py-3 bg-neon-green text-black rounded-lg font-bold hover:bg-neon-pink hover:text-black transition-transform transform hover:scale-105"
               >
                 Login
               </button>
@@ -94,10 +99,10 @@ export default function HomePage() {
 
             {/* Register Button */}
             <div className="mt-6 text-center">
-              <p className="text-gray-400">New here?</p>
+              <p className="text-neon-green opacity-80">New here?</p>
               <button
-                className="mt-4 px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-transform transform hover:scale-105"
-                onClick={() => navigator('/register')}
+                className="mt-4 px-6 py-3 bg-neon-pink text-black rounded-lg font-bold hover:bg-neon-green hover:text-black transition-transform transform hover:scale-105"
+                onClick={() => navigator("/register")}
               >
                 Register
               </button>

@@ -17,22 +17,22 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center text-gray-300">
-      <div className="w-full max-w-md bg-gray-800 rounded-3xl shadow-2xl p-6 border border-gray-700">
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">
+    <div className="min-h-screen bg-black flex items-center justify-center text-neon-green font-mono">
+      <div className="w-full max-w-md bg-black border-2 border-neon-pink rounded-3xl shadow-glow p-8">
+        <h2 className="text-4xl font-extrabold text-neon-pink mb-6 text-center">
           Register
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Username Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-1">
+            <label className="block text-sm font-bold text-neon-green mb-1">
               Username
             </label>
             <input
               type="text"
               {...register("username", { required: "Username is required" })}
               placeholder="Your username"
-              className="w-full px-4 py-3 bg-gray-700 text-gray-200 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 bg-gray-800 text-neon-green border border-neon-pink rounded-lg shadow-glow focus:ring-2 focus:ring-neon-pink focus:outline-none"
             />
             {errors.username && (
               <p className="mt-1 text-sm text-red-500">
@@ -43,7 +43,7 @@ export default function Register() {
 
           {/* Email Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-1">
+            <label className="block text-sm font-bold text-neon-green mb-1">
               Email
             </label>
             <input
@@ -56,7 +56,7 @@ export default function Register() {
                 },
               })}
               placeholder="Your email"
-              className="w-full px-4 py-3 bg-gray-700 text-gray-200 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 bg-gray-800 text-neon-green border border-neon-pink rounded-lg shadow-glow focus:ring-2 focus:ring-neon-pink focus:outline-none"
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-500">
@@ -67,7 +67,7 @@ export default function Register() {
 
           {/* Password Field */}
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-1">
+            <label className="block text-sm font-bold text-neon-green mb-1">
               Password
             </label>
             <input
@@ -80,7 +80,7 @@ export default function Register() {
                 },
               })}
               placeholder="Your password"
-              className="w-full px-4 py-3 bg-gray-700 text-gray-200 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full px-4 py-3 bg-gray-800 text-neon-green border border-neon-pink rounded-lg shadow-glow focus:ring-2 focus:ring-neon-pink focus:outline-none"
             />
             {errors.password && (
               <p className="mt-1 text-sm text-red-500">
@@ -90,9 +90,9 @@ export default function Register() {
           </div>
 
           {/* Terms and Conditions */}
-          <p className="text-sm text-gray-400 text-center">
+          <p className="text-sm text-neon-green text-center">
             By registering, you agree to our{" "}
-            <Link to="/terms" className="text-blue-400 hover:underline">
+            <Link to="/terms" className="text-neon-pink hover:underline">
               Terms and Conditions
             </Link>.
           </p>
@@ -100,7 +100,7 @@ export default function Register() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-transform transform hover:scale-105"
+            className="w-full px-4 py-3 bg-neon-pink text-black rounded-lg font-bold hover:bg-neon-green hover:text-black transition-transform transform hover:scale-105 shadow-glow"
           >
             Register
           </button>
