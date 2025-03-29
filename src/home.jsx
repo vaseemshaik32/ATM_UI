@@ -35,7 +35,6 @@ export default function HomePage() {
               </h1>
               <a
                 onClick={()=>navigator('/readme')}
-                href="#learn-more"
                 className="inline-block px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
               >
                 Learn More

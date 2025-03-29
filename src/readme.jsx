@@ -1,20 +1,41 @@
-import React from 'react'
+import React from 'react';
 
 function Readme() {
   return (
-    <div>
-                  <p className="text-lg text-gray-400 mb-8">
-                Hey. We all have been in the long ATM lines. Be it for deposition or withdrawal of cash.<br />
-                What if I match the people that want to deposit cash with the people that want to withdraw cash?<br /><br />
-                1. Register and login. Enter the amount that you want to exchange.<br />
-                2. Choose if you want to exchange cash or digital currency. The app will give you some matches. They are looking to exchange with you: cash to digital or digital to cash.<br />
-                3. Choose the closest person from the matches. Just click their name to send them a chat request.<br />
-                4. Similarly, other users can send you chat requests, and you can accept them.<br />
-                5. You can check the users that accepted your request in the chats section. Just click their name and start chatting.<br />
-                6. Go back to the matches and choose another user if you want to chat with a new user.<br />
-              </p>  
+    <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold text-center mb-6">Welcome to CashExchange!</h1>
+      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+        Tired of those long ATM lines? Whether you're depositing or withdrawing cash, 
+        what if we could match people wanting to deposit cash with those who want to withdraw it?
+      </p>
+      <ol className="list-decimal list-inside text-gray-200 space-y-4">
+        <li>
+          <span className="font-semibold">Register and login:</span> Enter the amount you want to exchange.
+        </li>
+        <li>
+          <span className="font-semibold">Choose your exchange type:</span> Cash or digital currency. The app will provide matches—cash to digital or digital to cash.
+        </li>
+        <li>
+          <span className="font-semibold">Pick a match:</span> Choose the closest person and click their name to send a chat request.
+        </li>
+        <li>
+          <span className="font-semibold">Accept chat requests:</span> Other users can send you chat requests, and you can accept them.
+        </li>
+        <li>
+          <span className="font-semibold">Start chatting:</span> Check the users who accepted your requests in the chat section. Click their name and start chatting.
+        </li>
+        <li>
+          <span className="font-semibold">Explore more matches:</span> Go back to matches and choose another user to chat with.
+        </li>
+      </ol>
+      <div className="text-center mt-8">
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md">
+          Get Started
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Readme
+export default Readme;
+
