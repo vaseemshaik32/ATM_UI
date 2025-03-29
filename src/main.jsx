@@ -15,7 +15,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'; // Use HashRouter 
 import { Content } from './content.jsx';
 import TandC from './t & c.jsx';
 import { connectWebSocket } from './socket'; // Import WebSocket utility
-
+import Readme from './readme.jsx';
 // WebSocket reconnection logic
 window.onload = () => {
     const username = localStorage.getItem('usernameforreact');
@@ -36,6 +36,7 @@ createRoot(document.getElementById('root')).render(
             <HashRouter>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/readme" element={<Readme/>}/>
                     <Route path="/register" element={<Register />} />
                     <Route path="/terms" element={<TandC />} />
                     <Route path="/userdashboard" element={<UserDashboard />}>
