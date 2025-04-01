@@ -9,7 +9,7 @@ import { addMessage } from "./messageslice";
 let socket = null;
 export const connectWebSocket = (myid,logintoken) => {
   console.log(logintoken)
-  socket = new WebSocket(`wss://backend-qyp7.onrender.com?myid=${myid}&logintoken=${logintoken}`);
+  socket = new WebSocket(`wss://backend-544q.onrender.com?myid=${myid}&logintoken=${logintoken}`);
 
   socket.onopen = () => {
     console.log('WebSocket connection established for:', myid);

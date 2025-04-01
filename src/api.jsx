@@ -5,7 +5,7 @@ import { connectWebSocket } from './socket';
 export const loginUser = async (loginData,navigator) => {
   try 
   {
-    const response = await axios.post('https://backend-qyp7.onrender.com/api/login', loginData);
+    const response = await axios.post('https://backend-544q.onrender.com/api/login', loginData);
     if (response.data === 'Please register first') {
     alert('Please register first'); return}
     localStorage.setItem('logintoken', response.data.token);
@@ -36,7 +36,7 @@ export const loginUser = async (loginData,navigator) => {
 
 export const registerUser = async (registerData,navigator) => {
   try {
-    const response = await axios.post('https://backend-qyp7.onrender.com/api/register', registerData);
+    const response = await axios.post('https://backend-544q.onrender.com/api/register', registerData);
     alert('registered successfully,login now')
     navigator('/')
     console.log('Registration Successful:', response.data); // Handle success message
@@ -54,7 +54,7 @@ export const getcashguys = async (navigator, dispatch, amount) => {
   try {
     const token = localStorage.getItem('logintoken');
     const response = await axios.put(
-      'https://backend-qyp7.onrender.com/api/getstats/needcash',
+      'https://backend-544q.onrender.com/api/getstats/needcash',
       { amount }, // Include the amount in the request body
       {
         headers: {
@@ -80,7 +80,7 @@ export const getdigitalguys = async (navigator, dispatch, amount) => {
   try {
     const token = localStorage.getItem('logintoken');
     const response = await axios.put(
-      'https://backend-qyp7.onrender.com/api/getstats/needdigital',
+      'https://backend-544q.onrender.com/api/getstats/needdigital',
       { amount }, // Include the amount in the request body
       {
         headers: {
@@ -103,7 +103,7 @@ export const userlogout = async (navigator) => {
   const token = localStorage.getItem('logintoken'); // Assuming you store the token in localStorage
   try {
     axios.put(
-      'https://backend-qyp7.onrender.com/api/logout', // API endpoint
+      'https://backend-544q.onrender.com/api/logout', // API endpoint
       {}, // Empty body for a PUT request
       {
         headers: {
