@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 function Readme() {
+  const navigator=useNavigate()
   return (
     <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-center mb-6">Welcome to ChickenFish!</h1>
@@ -29,8 +30,8 @@ function Readme() {
         </li>
       </ol>
       <div className="text-center mt-8">
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md">
-          Get Started
+        <button onClick={()=>navigator('/')} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-md">
+          Back to Home
         </button>
       </div>
     </div>

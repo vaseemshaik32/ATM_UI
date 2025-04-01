@@ -25,7 +25,7 @@ const Matches = () => {
         {users.map(([distance, user], index) => ( // Destructure [distance, user] from each item
           <li
             key={index}
-            onClick={() => sendConnectRequest(user.userid.username)} // Send connection request with username
+            onClick={() => { alert(`chat request sent to ${user.userid.username}`); sendConnectRequest(user.userid.username)}} // Send connection request with username
             className="flex justify-between items-center p-4 bg-black border-2 border-neon-pink text-neon-green rounded-lg shadow-glow transform transition hover:translate-y-1 hover:bg-neon-pink hover:text-black duration-300"
           >
             <span className="font-bold">{distance} km</span>

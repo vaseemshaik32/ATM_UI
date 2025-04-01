@@ -37,6 +37,7 @@ export const loginUser = async (loginData,navigator) => {
 export const registerUser = async (registerData,navigator) => {
   try {
     const response = await axios.post('https://backend-qyp7.onrender.com/api/register', registerData);
+    alert('registered successfully,login now')
     navigator('/')
     console.log('Registration Successful:', response.data); // Handle success message
     return response.data;
