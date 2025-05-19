@@ -1,21 +1,21 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import HomePage from './home.jsx';
-import Register from './Register.jsx';
-import UserDashboard from './dashboard.jsx';
-import Chats from './chats.jsx';
-import Matches from './matches.jsx';
-import NotFound from './notfound.jsx';
-import ChatWindow from './chatwindow.jsx';
-import Requests from './requests.jsx';
+import HomePage from './Components/home.jsx';
+import Register from './Components/Register.jsx';
+import UserDashboard from './Components/dashboard.jsx';
+import Chats from './Components/chats.jsx';
+import Matches from './Components/matches.jsx';
+import NotFound from './Components/notfound.jsx';
+import ChatWindow from './Components/chatwindow.jsx';
+import Requests from './Components/requests.jsx';
 import { Provider } from 'react-redux'; // Import Redux Provider
-import store from './store';
+import store from './Redux/store.jsx';
 import { HashRouter, Routes, Route } from 'react-router-dom'; // Use HashRouter instead of BrowserRouter
-import { Content } from './content.jsx';
-import TandC from './t & c.jsx';
+import { Content } from './Components/content.jsx';
+import TandC from './Components/t & c.jsx';
 import { connectWebSocket } from './RealTime/socket.jsx'; // Import WebSocket utility
-import Readme from './readme.jsx';
+import Readme from './Components/readme.jsx';
 // WebSocket reconnection logic
 window.onload = () => {
     const username = localStorage.getItem('usernameforreact');
