@@ -8,9 +8,8 @@ export const loginUser = async (loginData,navigator) => {
     const response = await axios.post('https://backend-544q.onrender.com/api/login', loginData);
     if (response.data === 'Please register first') {
     alert('Please register first'); return}
-    localStorage.setItem('logintoken', response.data.token);
     localStorage.setItem('usernameforreact',response.data.usernameforreact)
-    connectWebSocket(response.data.usernameforreact,response.data.token); 
+    connectWebSocket(response.data.usernameforreact); 
     navigator('/userdashboard/content')
     console.log('Login Successful:', response.data); // Handle the token or success message
     return response.data;
@@ -52,14 +51,11 @@ export const registerUser = async (registerData,navigator) => {
 
 export const getcashguys = async (navigator, dispatch, amount) => {
   try {
-    const token = localStorage.getItem('logintoken');
     const response = await axios.put(
       'https://backend-544q.onrender.com/api/getstats/needcash',
       { amount }, // Include the amount in the request body
       {
-        headers: {
-          Authorization: `Bearer ${token}`, // Send the token in the Authorization header
-        },
+        withCredentials: true
       }
     );
     console.log('Active Users:', response); // Logs the list of users
@@ -78,14 +74,11 @@ export const getcashguys = async (navigator, dispatch, amount) => {
 /*need digital unfinished*/
 export const getdigitalguys = async (navigator, dispatch, amount) => {
   try {
-    const token = localStorage.getItem('logintoken');
     const response = await axios.put(
       'https://backend-544q.onrender.com/api/getstats/needdigital',
       { amount }, // Include the amount in the request body
       {
-        headers: {
-          Authorization: `Bearer ${token}`, // Send the token in the Authorization header
-        },
+        withCredentials: true
       }
     );
     console.log('Active Users:', response); 
@@ -93,22 +86,21 @@ export const getdigitalguys = async (navigator, dispatch, amount) => {
     localStorage.setItem('matchescash', 'false');
     navigator('/userdashboard/matches/false');
     return response.data;
-  } catch (response) {
-    console.log(response.error)
-  }
+  } 
+  catch (error) { // ✅  
+    console.error('Error:', error.response?.data || error.message);
+    throw error;
+                }
 };
 
 
 export const userlogout = async (navigator) => {
-  const token = localStorage.getItem('logintoken'); // Assuming you store the token in localStorage
   try {
-    axios.put(
+    await axios.put(
       'https://backend-544q.onrender.com/api/logout', // API endpoint
       {}, // Empty body for a PUT request
       {
-        headers: {
-          Authorization: `Bearer ${token}`, // Send the token in the Authorization header
-        },
+        withCredentials: true 
       }
     );
     console.log('User logged out successfully');

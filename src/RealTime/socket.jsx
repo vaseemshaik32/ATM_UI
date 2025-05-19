@@ -7,9 +7,8 @@ import { addChat } from "../Redux/chatsslice";
 import { addMessage } from "../Redux/messageslice";
 /* when user logs in, we connect the web socket*/
 let socket = null;
-export const connectWebSocket = (myid,logintoken) => {
-  console.log(logintoken)
-  socket = new WebSocket(`wss://backend-544q.onrender.com?myid=${myid}&logintoken=${logintoken}`);
+export const connectWebSocket = (myid) => {
+  socket = new WebSocket(`wss://backend-544q.onrender.com?myid=${myid}`);
 
   socket.onopen = () => {
     console.log('WebSocket connection established for:', myid);
