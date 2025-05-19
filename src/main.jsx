@@ -14,7 +14,7 @@ import store from './store';
 import { HashRouter, Routes, Route } from 'react-router-dom'; // Use HashRouter instead of BrowserRouter
 import { Content } from './content.jsx';
 import TandC from './t & c.jsx';
-import { connectWebSocket } from './socket'; // Import WebSocket utility
+import { connectWebSocket } from './RealTime/socket.jsx'; // Import WebSocket utility
 import Readme from './readme.jsx';
 // WebSocket reconnection logic
 window.onload = () => {

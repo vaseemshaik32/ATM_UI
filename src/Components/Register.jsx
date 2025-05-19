@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { registerUser } from "./api";
+import { registerUser } from "../APIs/api";
 import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation to Terms and Conditions page
 
 export default function Register() {

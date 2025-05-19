@@ -1,4 +1,4 @@
-import { getcashguys, getdigitalguys } from "./api";
+import { getcashguys, getdigitalguys } from "../APIs/api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";

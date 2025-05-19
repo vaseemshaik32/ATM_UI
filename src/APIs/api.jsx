@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { setDonors, setReceivers } from './userinfoslice';
-import { connectWebSocket } from './socket';
+import { setDonors, setReceivers } from '../Redux/userinfoslice';
+import { connectWebSocket } from '../RealTime/socket';
 /*login api. unfinished*/
 export const loginUser = async (loginData,navigator) => {
   try 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { getuserlocation } from "./methods";
-import { loginUser } from "./api";
+import { getuserlocation } from "../APIs/methods";
+import { loginUser } from "../APIs/api";
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {

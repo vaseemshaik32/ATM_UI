@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { sendMessageToMatch } from './socket'; // Import the WebSocket function
+import { sendMessageToMatch } from '../RealTime/socket'; // Import the WebSocket function
 import { useParams } from 'react-router-dom';
 
 const ChatWindow = () => {

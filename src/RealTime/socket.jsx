@@ -1,10 +1,10 @@
 /*everything websocket */
 
 /* doesnt matter who accepted, if a request is accepted bt me or my match, i have to push it.*/
-import store from "./store";
-import { addRequest, removeRequest} from "./reqslice";
-import { addChat } from "./chatsslice";
-import { addMessage } from "./messageslice";
+import store from "../Redux/store";
+import { addRequest, removeRequest} from "../Redux/reqslice";
+import { addChat } from "../Redux/chatsslice";
+import { addMessage } from "../Redux/messageslice";
 /* when user logs in, we connect the web socket*/
 let socket = null;
 export const connectWebSocket = (myid,logintoken) => {

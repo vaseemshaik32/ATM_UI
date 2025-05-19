@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'; // Import to get URL parameters
-import { sendConnectRequest } from './socket';
+import { sendConnectRequest } from '../RealTime/socket';
 
 const Matches = () => {
   const { cash } = useParams(); // Retrieve 'cash' param from the URL
