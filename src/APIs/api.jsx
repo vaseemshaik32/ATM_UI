@@ -5,7 +5,7 @@ import { connectWebSocket } from '../RealTime/socket';
 export const loginUser = async (loginData,navigator) => {
   try 
   {
-    const response = await axios.post('https://backend-544q.onrender.com/api/login', loginData);
+    const response = await axios.post('https://api.chicken-fish.site/api/login', loginData);
     if (response.data === 'Please register first') {
     alert('Please register first'); return}
     localStorage.setItem('usernameforreact',response.data.usernameforreact)
@@ -35,7 +35,7 @@ export const loginUser = async (loginData,navigator) => {
 
 export const registerUser = async (registerData,navigator) => {
   try {
-    const response = await axios.post('https://backend-544q.onrender.com/api/register', registerData);
+    const response = await axios.post('https://api.chicken-fish.site/api/register', registerData);
     alert('registered successfully,login now')
     navigator('/')
     console.log('Registration Successful:', response.data); // Handle success message
@@ -52,7 +52,7 @@ export const registerUser = async (registerData,navigator) => {
 export const getcashguys = async (navigator, dispatch, amount) => {
   try {
     const response = await axios.put(
-      'https://backend-544q.onrender.com/api/getstats/needcash',
+      'https://api.chicken-fish.site/api/getstats/needcash',
       { amount }, // Include the amount in the request body
       {
         withCredentials: true
@@ -75,7 +75,7 @@ export const getcashguys = async (navigator, dispatch, amount) => {
 export const getdigitalguys = async (navigator, dispatch, amount) => {
   try {
     const response = await axios.put(
-      'https://backend-544q.onrender.com/api/getstats/needdigital',
+      'https://api.chicken-fish.site/api/getstats/needdigital',
       { amount }, // Include the amount in the request body
       {
         withCredentials: true
@@ -97,7 +97,7 @@ export const getdigitalguys = async (navigator, dispatch, amount) => {
 export const userlogout = async (navigator) => {
   try {
     await axios.put(
-      'https://backend-544q.onrender.com/api/logout', // API endpoint
+      'https://api.chicken-fish.site/api/logout', // API endpoint
       {}, // Empty body for a PUT request
       {
         withCredentials: true 
