@@ -13,4 +13,4 @@ Tech used:-
 > the app is hosted on Render.com
 > Geolocation API to capture users location and match them with potential exchanges.
 
-> App Link :- https://frontend-5gg2.onrender.com
+> App Link :- https://chicken-fish.site/
